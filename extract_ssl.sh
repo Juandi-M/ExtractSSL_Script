@@ -29,8 +29,13 @@ cat DigiCertCA >> creativedrive.crt
 # --------FOLDER INSTRUCTIONS AND CLEANUP-------
 #c create folder for dropping files of interest
 mkdir final
+
 #Drop files of interest.
 mv creativedrive.crt final && mv creativedrive.key final
+
+#removes everything besides final
+rm -r $(ls -A | grep -v final)
+
 
 
 #       chmod +x extract_ssl.sh
